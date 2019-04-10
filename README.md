@@ -2,7 +2,7 @@
 ## Introduction
 Everyone has their own journey when learning a new language. pymadeeasy is intended to demonstrate my own journey through Python 3.x and identify ways to abstract problems into reusable pieces that can be used by any project.
 
-**Constructive** feedback is welcome at any time to help me along my Python journey.
+***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
 0.0.1 includes the scope of this project and overall format via the README.md
@@ -14,7 +14,6 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html) is a Python style guide from Google that points to a few common tools as well as formatting standards. As I learn more about these, I will strive to adhere to these so others can better understand my code.
 - [Semantic Versioning](https://semver.org/) is a commonly known versioning scheme that I will do my best to adhere to over the course of this project.
-- [Markdown Guide](https://www.markdownguide.org/basic-syntax) is the guide I used for this README
 
 ## Versions
 ### 0.0.1
@@ -26,3 +25,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 
 ## Future Considerations
 - pylint
+- pytorch
+
+## Additional References
+- [Markdown Guide](https://www.markdownguide.org/basic-syntax) is the guide I used for this README
