@@ -28,4 +28,4 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - pytorch
 
 ## Additional References
-- [Markdown Guide](https://www.markdownguide.org/basic-syntax) is the guide I used for this README
+- [Markdown Guide](https://www.markdownguide.org/basic-syntax) is the guide I used for this README.md
