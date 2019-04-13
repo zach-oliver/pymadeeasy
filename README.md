@@ -29,3 +29,10 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 
 ## Additional References
 - [Markdown Guide](https://www.markdownguide.org/basic-syntax) is the guide I used for this README.md
+- [pipenv](https://pipenv.readthedocs.io/en/latest/) is a tool used setup and manage your development environment
+
+## Tools Used
+- [PyCharm](https://www.jetbrains.com/pycharm/promo/anaconda/) I'm currently this trying out
+- [Anaconda](https://www.anaconda.com/distribution/) is what I'm most familiar with to date and what I used to build [ref](https://github.com/zach-oliver/ref)
+- [Sublime](https://www.sublimetext.com/) I use as a general text editor until I find the best IDE and dev environment management solution
+- [Homebrew](https://brew.sh/) is a package manager for OS X. I used this to install pipenv
