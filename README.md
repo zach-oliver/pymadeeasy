@@ -25,7 +25,8 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 
 ## Future Considerations
 - pylint
-- pytorch
+- [pytorch](https://pytorch.org/get-started/locally/)
+- [unittest](https://docs.python.org/3/library/unittest.html)
 
 ## Additional References
 - [Markdown Guide](https://www.markdownguide.org/basic-syntax) is the guide I used for this README.md
