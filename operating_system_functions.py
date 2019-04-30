@@ -6,10 +6,13 @@ Created on 04/12/19
 import os
 import errno
 import datetime
+import time
 
 
 def create_folders_along_path(str_path):
     """Creates any folders locally along str_path
+
+    NOT UNIT TESTED
 
     Retrieves the current date and time one of two ways:
     - As a string object
@@ -35,9 +38,10 @@ def create_folders_along_path(str_path):
                 raise
 
 
-# UNIT TESTED
 def get_current_date_time(as_string=False):
     """Gets the current date and time
+
+    UNIT TESTED
 
     Retrieves the current date and time one of two ways:
     - As a string object
@@ -57,3 +61,22 @@ def get_current_date_time(as_string=False):
         return str(datetime.datetime.now())
     else:
         return datetime.datetime.now()
+
+
+def get_current_time():
+    """Gets the current date and time
+
+    NOT UNIT TESTED
+
+    Retrieves the current time
+
+    Args:
+        None
+
+    Returns:
+        An example time object: 1556510572.392354
+
+    Raises:
+        None
+    """
+    return time.time()
