@@ -19,14 +19,13 @@ def create_folders_along_path(str_path):
     - As a datetime object
 
     Args:
-        as_string: if False, function returns a datetime object.
+        str_path: A string that has the path you would like to create folders along
 
     Returns:
-        An example string: 2019-04-27 12:03:21.037656
-        or the datetime object
+        None, folders are created along the path provided otherwise error
 
     Raises:
-        IOError: An error occurred accessing the bigtable.Table object.
+        OSError: An error occurred accessing the bigtable.Table object.
     """
     # https://stackoverflow.com/questions/12517451/automatically-creating-directories-with-file-output
     # creates the directory and any parent directories if it doesn't exist
@@ -69,9 +68,6 @@ def get_current_time():
     NOT UNIT TESTED
 
     Retrieves the current time
-
-    Args:
-        None
 
     Returns:
         An example time object: 1556510572.392354

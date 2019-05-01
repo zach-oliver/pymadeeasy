@@ -8,7 +8,6 @@ from operating_system_functions import create_folders_along_path, get_current_da
 
 class Log:
 
-    # UNIT TESTED
     def __init__(self, str_filename='', bool_debug=False, str_log_directory='log/',
                  str_function='', str_separator='|:|'):
         """Initialize the log file and class object
@@ -61,11 +60,10 @@ class Log:
         if self.debug:
             print('log.py' + self.separator + 'self.location (full name)' + self.separator + self.location)
 
-        self.append(self.filename)
+        self.append('LOG CREATED')
 
     # UNIT TESTED
     def append(self, str_log_line):
-        # TODO doesn't handle non-strings
         """Append log line to log file
 
         UNIT TESTED
@@ -89,7 +87,7 @@ class Log:
         log_line = log_line + str(round(get_current_time() - self.start_time, 2)) + ' sec'
         log_line = log_line + self.separator + self.filename
         log_line = log_line + self.separator + self.function
-        log_line = log_line + self.separator + str_log_line
+        log_line = log_line + self.separator + str(str_log_line)
 
         if self.debug:
             print(log_line)
