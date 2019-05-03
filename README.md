@@ -5,10 +5,10 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-0.0.1 includes the scope of this project and overall format via the README.md
+0.0.3 will include common ways to make HTTP requests and receive responses.
 
 ## Next Version
-0.0.2 will include common ways to make HTTP requests and receive responses
+0.0.4 will include common ways to create an HTTP endpoint.
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
@@ -16,6 +16,19 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [Semantic Versioning](https://semver.org/) is a commonly known versioning scheme that I will do my best to adhere to over the course of this project.
 
 ## Versions
+### 0.0.3
+- Initial _api_ for easy requesting and handing of responses over HTTP including:
+    - _get_api_response_ - make a basic request and return a response
+    - _dict_http_status_codes_ - a dictionary of primary status codes
+    - _API_ class providing more easy to use attributes to deal with the request
+
+### 0.0.2
+- _Log_ class for error and debug logging
+- Initial _operating_system_functions_ including:
+    - _get_current_date_time_ - return the current date & time
+    - _create_folders_along_path_ - from where this script is running, create folders along a path
+    - _get_current_time_ - return the current time
+
 ### 0.0.1
 - Includes the scope of this project and overall format via the README.md
 
@@ -25,7 +38,8 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 
 ## Future Considerations
 - pylint
-- pytorch
+- [pytorch](https://pytorch.org/get-started/locally/)
+- [unittest](https://docs.python.org/3/library/unittest.html)
 
 ## Additional References
 - [Markdown Guide](https://www.markdownguide.org/basic-syntax) is the guide I used for this README.md
