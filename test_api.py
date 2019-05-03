@@ -3,7 +3,7 @@ Created on 04/29/19
 @author: zach-oliver
 """
 
-from api import get_api_response, API
+from api import get_api_response, APIResponse
 from print_functions import print_message_highlighted
 from Log import Log
 
@@ -30,7 +30,7 @@ def test_api():
         this_log.append('get_api_response function FAILED')
 
     this_log.append('Testing API class')
-    response_class = API()
+    response_class = APIResponse()
     this_log.append(f'{response_class}')
     if response_class.status_str == 'OK':
         this_log.append('FINISH')

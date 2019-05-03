@@ -40,7 +40,7 @@ dict_http_status_codes = {
 }
 
 
-class API:
+class APIResponse:
 
     def __init__(self, str_url='https://httpbin.org/ip', str_username='', str_password=''):
         """Initialize the API class object
