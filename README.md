@@ -5,7 +5,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-0.0.3 includes common ways to make HTTP requests and receive responses.
+0.0.3.1 includes a new operating system function to execute a string on the command line / terminal.
 
 ## Next Version
 0.0.4 will include common ways to create an HTTP endpoint.
@@ -14,8 +14,13 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html) is a Python style guide from Google that points to a few common tools as well as formatting standards. As I learn more about these, I will strive to adhere to these so others can better understand my code.
 - [Semantic Versioning](https://semver.org/) is a commonly known versioning scheme that I will do my best to adhere to over the course of this project.
+- [Chalice](https://github.com/aws/chalice) is a Python Serverless Microframework using AWS. It allows you to create Lambda-based cloud functions and invoke them via API.
 
 ## Versions
+### 0.0.3.1
+- Added _run__command_ to run a string on the command line in python
+    - Needed to run Chalice
+
 ### 0.0.3
 - Initial _api_ for easy requesting and handing of responses over HTTP including:
     - _get_api_response_ - make a basic request and return a response
@@ -35,6 +40,19 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ### 0.0.0
  - Initial commit when creating the repository including the .gitignore and README.md
 
+## Developer Setup
+- [Install Python 3 via Homebrew](https://wsvincent.com/install-python3-mac/)
+- [Download PyCharm](https://www.jetbrains.com/pycharm/promo/anaconda/)
+- [Configure pipenv in PyCharm](https://www.jetbrains.com/help/pycharm/pipenv.html)
+- [Setup default AWS CLI credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/configuration.html#aws-config-file)
+
+## Tools Used
+- [PyCharm](https://www.jetbrains.com/pycharm/promo/anaconda/) I'm currently this trying out
+- [Homebrew](https://brew.sh/) is a package manager for OS X. I used this to install Python 3.X
+
+#### Tools Deprecated
+- [Anaconda](https://www.anaconda.com/distribution/) is what I'm most familiar with to date and what I used to build [ref](https://github.com/zach-oliver/ref)
+- [Sublime](https://www.sublimetext.com/) was used as a general text editor until I found pycharm
 
 ## Future Considerations
 - pylint
@@ -45,8 +63,3 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [Markdown Guide](https://www.markdownguide.org/basic-syntax) is the guide I used for this README.md
 - [pipenv](https://pipenv.readthedocs.io/en/latest/) is a tool used setup and manage your development environment
 
-## Tools Used
-- [PyCharm](https://www.jetbrains.com/pycharm/promo/anaconda/) I'm currently this trying out
-- [Anaconda](https://www.anaconda.com/distribution/) is what I'm most familiar with to date and what I used to build [ref](https://github.com/zach-oliver/ref)
-- [Sublime](https://www.sublimetext.com/) I use as a general text editor until I find the best IDE and dev environment management solution
-- [Homebrew](https://brew.sh/) is a package manager for OS X. I used this to install pipenv

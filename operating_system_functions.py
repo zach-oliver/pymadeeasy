@@ -76,3 +76,25 @@ def get_current_time():
         None
     """
     return time.time()
+
+
+def run_command(str_command):
+    """Runs a terminal command in the current working directory
+
+        UNIT TESTED
+
+        Retrieves the current date and time one of two ways:
+        - As a string object
+        - As a datetime object
+
+        Args:
+            str_command: the string equivalent of the command you
+                want to run on the command line / terminal
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+    os.system(str_command)
