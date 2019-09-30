@@ -5,10 +5,10 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-0.0.3.1 includes a new operating system function to execute a string on the command line / terminal.
+0.0.4 includes the ability to expose and call a public API endpoint.
 
 ## Next Version
-0.0.4 will include common ways to create an HTTP endpoint.
+0.0.5 will include more methods to expose and call a public API endpoint.
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
@@ -17,8 +17,19 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [Chalice](https://github.com/aws/chalice) is a Python Serverless Microframework using AWS. It allows you to create Lambda-based cloud functions and invoke them via API.
 
 ## Versions
+### 0.0.4
+- Created _lambda_with_api_trigger_ to provide example files to deploy a Chalice-based Lambda function triggered by an API request.
+    - Provided example for basic _GET_ on root and additional paths.
+- Added several functions to _operating_system_functions.py_:
+    - _run_command_ now has the ability to store or return the output from the terminal when that code was run.
+    - _convert_string_to_url_ added to provide a url-compliant version of the string you pass to it. Good for file names as well.
+    - _find_url_in_string_ added to identify a url within a string of text.
+    - _read_file_ added to provide an easy way to read files and provide text with or without new lines.
+- Added redirect history to _api_ function and class.
+- Added _post_data_, _post_json_, and _post_file_ functions to _APIResponse_ class.
+
 ### 0.0.3.1
-- Added _run__command_ to run a string on the command line in python
+- Added _run_command_ to run a string on the command line in python
     - Needed to run Chalice
 
 ### 0.0.3

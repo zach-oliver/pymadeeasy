@@ -108,3 +108,6 @@ venv.bak/
 
 # pymadeeasy
 log/*
+
+# run_command_output
+*.out
