@@ -185,3 +185,42 @@ def read_file(str_file_path, mode='rt', bool_no_lines=False):
         else:
             data = my_file.readlines()
     return data
+
+
+def get_current_date_time_url_str():
+    """Converts the current date and time to a URL compliant version and returns that string back
+
+    NOT UNIT TESTED
+
+    Using a regular expression, remove all non-URL compliant characters from the date time string
+        and return that string
+
+    Args:
+        None
+
+    Returns:
+        String
+
+    Raises:
+        None
+    """
+    return convert_string_to_url(get_current_date_time(as_string=True))
+
+
+def wait(int_seconds):
+    """Wait for a given number of seconds before proceeding
+
+    NOT UNIT TESTED
+
+    Use the time sleep function to wait for a given number of seconds
+
+    Args:
+        int_seconds: the number of seconds to wait in integer form
+
+    Returns:
+        None
+
+    Raises:
+        None
+    """
+    time.sleep(int_seconds)

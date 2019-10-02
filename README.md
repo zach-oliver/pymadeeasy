@@ -5,10 +5,10 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-0.0.4 includes the ability to expose and call a public API endpoint.
+0.0.5 added the ability to create a time based file name / url and the ability to wait before continuing the execution.
 
 ## Next Version
-0.0.5 will include more methods to expose and call a public API endpoint.
+0.0.6 will include more methods to expose and call a public API endpoint.
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
@@ -17,6 +17,11 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [Chalice](https://github.com/aws/chalice) is a Python Serverless Microframework using AWS. It allows you to create Lambda-based cloud functions and invoke them via API.
 
 ## Versions
+### 0.0.5
+- Created two new functions in _operating_system_functions_:
+    - _get_current_date_time_url_str_ converts the current date and time to a URL compliant version and returns that string back.
+    - _wait_ for a given number of seconds before proceeding.
+
 ### 0.0.4
 - Created _lambda_with_api_trigger_ to provide example files to deploy a Chalice-based Lambda function triggered by an API request.
     - Provided example for basic _GET_ on root and additional paths.
