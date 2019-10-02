@@ -157,8 +157,12 @@ def find_url_in_string(str_original):
         None
     """
     # https://stackoverflow.com/questions/839994/extracting-a-url-in-python
-    output_str = re.search("(?P<url>https?://[^\s]+)", str_original).group("url")
-    return output_str
+    temp_re = re.search("(?P<url>https?://[^\s]+)", str_original)
+    if temp_re is not None:
+        output_str = temp_re.group("url")
+        return output_str
+    else:
+        return None
 
 
 def read_file(str_file_path, mode='rt', bool_no_lines=False):
