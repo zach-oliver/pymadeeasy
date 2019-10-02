@@ -10,6 +10,8 @@ requests = "*"
 torch = "*"
 torchvision = "*"
 urllib3 = ">=1.24.2"
+boto3 = "*"
+chalice = "*"
 
 [requires]
 python_version = "3.7"
