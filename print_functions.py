@@ -27,3 +27,7 @@ def print_variables_highlighted(dict_variables):
         print(key + ' ' + str(type(value))  + ' : ' + str(value))
     print('                                                           ')
     print('***********************************************************')
+
+
+def print_str(str_print):
+    print(str_print)

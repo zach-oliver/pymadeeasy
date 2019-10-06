@@ -5,10 +5,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-1.0.0 is first release for pymadeeasy. It includes the ability to create a timer-based lambda function and get the current working directory and check a variable's type.
-
-## Next Version
-1.0.1 will include more methods to expose and call a public API endpoint.
+1.1.0 includes a standard print function
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
@@ -17,6 +14,11 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [Chalice](https://github.com/aws/chalice) is a Python Serverless Microframework using AWS. It allows you to create Lambda-based cloud functions and invoke them via API.
 
 ## Versions
+### 1.1.0
+- Added one function to _print_functions_
+    - _print_str_ added as a standard print function for strings
+- Adjusted formatting of .gitignore
+
 ### 1.0.0
 - Created _lambda_with_timer_trigger_ to provide example files to deploy a Chalice-based Lambda function triggered by a time interval.
     - Provided example for basic 5 minute trigger.
