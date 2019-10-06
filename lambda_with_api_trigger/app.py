@@ -1,6 +1,9 @@
+import sys
+sys.path.insert(0, './pymadeeasy')
 from chalice import Chalice, BadRequestError, NotFoundError
+from operating_system_functions import get_current_date_time_url_str
 
-app = Chalice(app_name='chalice-API')
+app = Chalice(app_name="lambda_with_api_trigger_%s" % (get_current_date_time_url_str()))
 app.debug = True
 
 # https://www.w3schools.com/tags/ref_httpmethods.asp

@@ -157,8 +157,12 @@ def find_url_in_string(str_original):
         None
     """
     # https://stackoverflow.com/questions/839994/extracting-a-url-in-python
-    output_str = re.search("(?P<url>https?://[^\s]+)", str_original).group("url")
-    return output_str
+    temp_re = re.search("(?P<url>https?://[^\s]+)", str_original)
+    if temp_re is not None:
+        output_str = temp_re.group("url")
+        return output_str
+    else:
+        return None
 
 
 def read_file(str_file_path, mode='rt', bool_no_lines=False):
@@ -224,3 +228,38 @@ def wait(int_seconds):
         None
     """
     time.sleep(int_seconds)
+
+
+def get_current_working_directory():
+    """Gets the current working directory of the operating system
+
+    UNIT TESTED
+
+    Uses the os library to grab the current working directory and
+        then converts it to a string and returns
+
+    Returns:
+        A string of the current working directory
+
+    Raises:
+        None
+    """
+    return str(os.getcwd())
+
+
+def check_variable_type(check_variable, check_type):
+    """Check if the first variable is of specific type
+
+    UNIT TESTED
+
+    Returns True if the variable being checked is of any of the
+        tuple types passed
+
+    Returns:
+        True or False if the variable is of the types passed
+
+    Raises:
+        None
+    """
+    return type(check_variable) == check_type
+
