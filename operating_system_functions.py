@@ -8,6 +8,7 @@ import errno
 import datetime
 import time
 import re
+import print_functions as p
 
 
 def create_folders_along_path(str_path):
@@ -182,7 +183,7 @@ def read_file(str_file_path, mode='rt', bool_no_lines=False):
         None
     """
     # https://stackoverflow.com/questions/8369219/how-to-read-a-text-file-into-a-string-variable-and-strip-newlines
-    print(str_file_path)
+    p.print_str(str_file_path)
     with open(str_file_path, mode) as my_file:
         if bool_no_lines:
             data = my_file.read().replace('\n', '')

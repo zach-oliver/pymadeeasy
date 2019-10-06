@@ -3,7 +3,7 @@ Created on 04/12/19
 @author: zach-oliver
 """
 
-from operating_system_functions import create_folders_along_path, get_current_date_time, get_current_time
+import operating_system_functions as os
 
 
 class Log:
@@ -45,9 +45,9 @@ class Log:
             self.separator: A string used to separate the filename from the function from
                 the log statement when writing to the file
         """
-        self.start_time = get_current_time()
+        self.start_time = os.get_current_time()
         self.filename = str_filename
-        self.location = get_current_date_time(as_string=True) + self.filename + '.log'
+        self.location = os.get_current_date_time(as_string=True) + self.filename + '.log'
         self.debug = bool_debug
         self.function = str_function
         self.separator = str_separator
@@ -80,11 +80,11 @@ class Log:
         Raises:
             None
         """
-        create_folders_along_path(self.location)
+        os.create_folders_along_path(self.location)
 
-        log_line = get_current_date_time(as_string=True) + self.separator
+        log_line = os.get_current_date_time(as_string=True) + self.separator
         # https://stackoverflow.com/questions/1557571/how-do-i-get-time-of-a-python-programs-execution
-        log_line = log_line + str(round(get_current_time() - self.start_time, 2)) + ' sec'
+        log_line = log_line + str(round(os.get_current_time() - self.start_time, 2)) + ' sec'
         log_line = log_line + self.separator + self.filename
         log_line = log_line + self.separator + self.function
         log_line = log_line + self.separator + str(str_log_line)
