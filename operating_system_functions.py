@@ -9,6 +9,7 @@ import datetime
 import time
 import re
 import print_functions as p
+import Log
 
 
 def create_folders_along_path(str_path):
@@ -22,6 +23,7 @@ def create_folders_along_path(str_path):
 
     Args:
         str_path: A string that has the path you would like to create folders along
+        this_log: a Log from Log class defined in pymadeeasy
 
     Returns:
         None, folders are created along the path provided otherwise error
@@ -80,7 +82,8 @@ def get_current_time():
     return time.time()
 
 
-def run_command(str_command, bool_output=False, bool_return_output=False, str_cmd_out_prefix='cmdout', str_cmd_out_suffix='.out',):
+def run_command(str_command, bool_output=False, bool_return_output=False, str_cmd_out_prefix='cmdout',
+                str_cmd_out_suffix='.out',):
     """Runs a terminal command in the current working directory
 
     UNIT TESTED

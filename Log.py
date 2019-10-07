@@ -152,3 +152,39 @@ class Log:
             None
         """
         self.debug = bool_debug
+
+    def start(self):
+        """Write a string to Log signaling the start of its use
+
+        UNIT TESTED
+
+        Uses append to write "START" with current Log details
+
+        Args:
+            None
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        self.append("START")
+
+    def finish(self):
+        """Change the log object debug boolean attribute
+
+        UNIT TESTED
+
+        Uses append to write "FINISH" with current Log details
+
+        Args:
+            None
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        self.append("FINISH")
