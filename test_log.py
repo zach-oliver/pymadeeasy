@@ -5,20 +5,20 @@ Created on 04/27/19
 The purpose of this file is to unit test the Log.py file
 """
 
-from Log import Log
-from print_functions import print_message_highlighted
+import Log
+import print_functions as p
 
 
 def test_log():
-    print_message_highlighted('TESTING LOG.PY')
+    p.print_message_highlighted('TESTING LOG.PY')
     dict_log_config = dict(str_filename='test_log.py', bool_debug=True, str_log_directory='log/',
                            str_function='test_log', str_separator='|:|')
 
-    print(dict_log_config)
+    p.print_str(str(dict_log_config))
 
-    this_log = Log(**dict_log_config)
+    this_log = Log.Log(**dict_log_config)
 
-    this_log.append('START')
+    this_log.start()
 
     this_log.change_debug(False)
     this_log.append('DEBUG=False SHOULD NOT SEE THIS IN CONSOLE')
@@ -34,4 +34,6 @@ def test_log():
     this_log.append('FILENAME CHANGE')
     this_log.change_filename('test_log.py')
 
-    this_log.append('FINISH')
+    this_log.finish()
+
+test_log()
