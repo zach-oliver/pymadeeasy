@@ -36,4 +36,5 @@ def test_log():
 
     this_log.finish()
 
+
 test_log()
