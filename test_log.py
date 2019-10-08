@@ -12,7 +12,7 @@ import print_functions as p
 def test_log():
     p.print_message_highlighted('TESTING LOG.PY')
     dict_log_config = dict(str_filename='test_log.py', bool_debug=True, str_log_directory='log/',
-                           str_function='test_log', str_separator='|:|')
+                           str_function='test_log')
 
     p.print_str(str(dict_log_config))
 
