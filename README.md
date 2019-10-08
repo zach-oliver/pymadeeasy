@@ -5,7 +5,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-1.1.2 added formatting options to _current_date_time_ for use in _Log_
+1.1.3 added _append_flat_ to _Log_ for potential data frame logging
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.

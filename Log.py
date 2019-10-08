@@ -188,3 +188,27 @@ class Log:
             None
         """
         self.append("FINISH")
+
+    def append_flat(self, str_log_line):
+        """Append log line to log file
+
+        NOT UNIT TESTED
+
+        Creates the folders along the path and the log file if it doesn't exist and adds the
+        log line as the last line of the file
+
+        Args:
+            str_log_line: A string that you wish to send to add to the log file
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        os.create_folders_along_path(self.location)
+        if self.debug:
+            print(str(str_log_line))
+        with open(self.location, "a") as f:
+            f.write(str(str_log_line))
+            f.write("\n")
