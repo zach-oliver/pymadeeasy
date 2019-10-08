@@ -9,7 +9,7 @@ import operating_system_functions as os
 class Log:
 
     def __init__(self, str_filename='', bool_debug=False, str_log_directory='log/',
-                 str_function='', str_separator='|:|'):
+                 str_function='', str_separator='|'):
         """Initialize the log file and class object
 
         UNIT TESTED
@@ -47,7 +47,7 @@ class Log:
         """
         self.start_time = os.get_current_time()
         self.filename = str_filename
-        self.location = os.get_current_date_time(as_string=True) + self.filename + '.log'
+        self.location = os.get_current_date_time(as_string=True, now_format='file') + self.filename + '.log'
         self.debug = bool_debug
         self.function = str_function
         self.separator = str_separator
@@ -82,7 +82,7 @@ class Log:
         """
         os.create_folders_along_path(self.location)
 
-        log_line = os.get_current_date_time(as_string=True) + self.separator
+        log_line = os.get_current_date_time(as_string=True, now_format='log') + self.separator
         # https://stackoverflow.com/questions/1557571/how-do-i-get-time-of-a-python-programs-execution
         log_line = log_line + str(round(os.get_current_time() - self.start_time, 2)) + ' sec'
         log_line = log_line + self.separator + self.filename

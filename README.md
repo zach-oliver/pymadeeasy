@@ -5,7 +5,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-1.1.1 includes some adjustments on how to correctly call functions and classes
+1.1.2 added formatting options to _current_date_time_ for use in _Log_
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
@@ -14,6 +14,10 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [Chalice](https://github.com/aws/chalice) is a Python Serverless Microframework using AWS. It allows you to create Lambda-based cloud functions and invoke them via API.
 
 ## Versions
+### 1.1.2
+- Adjusted _current_date_time_ formatting and its use on _Log_
+    - _Log_ calls new _current_date_time_ formats in output file and line logging
+
 ### 1.1.1
 - Added styling and invoking adjustments below
     - _Log_ calls _operating_systems_functions_ correctly

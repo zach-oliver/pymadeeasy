@@ -41,7 +41,7 @@ def create_folders_along_path(str_path):
                 raise
 
 
-def get_current_date_time(as_string=False):
+def get_current_date_time(as_string=False, now_format=''):
     """Gets the current date and time
 
     UNIT TESTED
@@ -52,16 +52,26 @@ def get_current_date_time(as_string=False):
 
     Args:
         as_string: if False, function returns a datetime object.
+            now_format:
+                if 'log' then the string returned will be shortened to reduce Log line length.
+                if 'file' then the string returned will be a file-compliant version of the date time.
 
     Returns:
         An example string: 2019-04-27 12:03:21.037656
+            log:  10/07/19 Mon 08:33:41PM
+            file: 10.07.19.Mon.08.30.25.PM
         or the datetime object
 
     Raises:
         None
     """
     if as_string:
-        return str(datetime.datetime.now())
+        if now_format == 'log':
+            return str(datetime.datetime.now().strftime('%m/%d/%y %a %I:%M:%S%p'))
+        elif now_format == 'file':
+            return str(datetime.datetime.now().strftime('%m.%d.%y.%a.%I.%M.%S.%p.'))
+        else:
+            return str(datetime.datetime.now())
     else:
         return datetime.datetime.now()
 
