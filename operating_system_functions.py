@@ -65,6 +65,7 @@ def get_current_date_time(as_string=False, now_format=''):
     Raises:
         None
     """
+    # https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
     if as_string:
         if now_format == 'log':
             return str(datetime.datetime.now().strftime('%m/%d/%y %a %I:%M:%S%p'))
