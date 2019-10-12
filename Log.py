@@ -83,7 +83,7 @@ class Log:
         """
         os.create_folders_along_path(self.location)
 
-        assert(isinstance(str_log_line, str), "PYMADEEASY LOG FAIL! You sent a non-string to append()")
+        assert isinstance(str_log_line, str), "PYMADEEASY LOG FAIL! You sent a non-string to append()"
 
         log_line = os.get_current_date_time(as_string=True, now_format='log') + self.separator
         # https://stackoverflow.com/questions/1557571/how-do-i-get-time-of-a-python-programs-execution
@@ -210,7 +210,7 @@ class Log:
         Raises:
             Assertion if you send a non-String as an argument
         """
-        assert(isinstance(str_log_line, str), "PYMADEEASY LOG FAIL! You sent a non-String to append_new_line()")
+        assert isinstance(str_log_line, str), "PYMADEEASY LOG FAIL! You sent a non-String to append_new_line()"
 
         os.create_folders_along_path(self.location)
         if self.debug:
