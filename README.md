@@ -5,7 +5,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-1.1.3 added _append_flat_ to _Log_ for potential data frame logging
+1.1.3 _Log_ and _print_functions_ handling for strings and objects
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
@@ -14,6 +14,17 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [Chalice](https://github.com/aws/chalice) is a Python Serverless Microframework using AWS. It allows you to create Lambda-based cloud functions and invoke them via API.
 
 ## Versions
+### 1.1.3
+- _Log_ changes:
+    - added assertions in _append_ and _append_new_line_ to make sure string was passed
+    - added _append_object_as_string_ and _append_object_as_string_new_line_ for unknown object handling
+- _print_functions_ changes:
+    - added _print_obj_ and _print_obj_to_str_ to be more explicit with variable types
+
+### 1.1.2
+- Adjusted _current_date_time_ formatting and its use on _Log_
+    - _Log_ calls new _current_date_time_ formats in output file and line logging
+
 ### 1.1.2
 - Adjusted _current_date_time_ formatting and its use on _Log_
     - _Log_ calls new _current_date_time_ formats in output file and line logging
