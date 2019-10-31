@@ -4,6 +4,7 @@ Created on 04/12/19
 """
 
 import operating_system_functions as os
+import print_functions as p
 
 
 class Log:
@@ -53,18 +54,18 @@ class Log:
         self.separator = str_separator
 
         if self.debug:
-            print('log.py' + self.separator + 'self.location (file name)' + self.separator + self.location)
+            p.print_str('log.py' + self.separator + 'self.location (file name)' + self.separator + self.location)
 
         self.location = "%s%s" % (str_log_directory, self.location)
 
         if self.debug:
-            print('log.py' + self.separator + 'self.location (full name)' + self.separator + self.location)
+            p.print_str('log.py' + self.separator + 'self.location (full name)' + self.separator + self.location)
 
         self.append('LOG CREATED')
 
     # UNIT TESTED
     def append(self, str_log_line):
-        """Append log line to log file
+        """Append a log line to the log file
 
         UNIT TESTED
 
@@ -78,19 +79,21 @@ class Log:
             None
 
         Raises:
-            None
+            Assertion if you send a non-String as an argument
         """
         os.create_folders_along_path(self.location)
+
+        assert isinstance(str_log_line, str), "PYMADEEASY LOG FAIL! You sent a non-string to append()"
 
         log_line = os.get_current_date_time(as_string=True, now_format='log') + self.separator
         # https://stackoverflow.com/questions/1557571/how-do-i-get-time-of-a-python-programs-execution
         log_line = log_line + str(round(os.get_current_time() - self.start_time, 2)) + ' sec'
         log_line = log_line + self.separator + self.filename
         log_line = log_line + self.separator + self.function
-        log_line = log_line + self.separator + str(str_log_line)
+        log_line = log_line + self.separator + str_log_line
 
         if self.debug:
-            print(log_line)
+            p.print_str(log_line)
         with open(self.location, "a") as f:
             f.write(log_line)
             f.write("\n")
@@ -132,6 +135,7 @@ class Log:
         Raises:
             None
         """
+        assert isinstance(str_function, str), "PYMADEEASY LOG FAIL! Non-string passed to change_function()!"
         self.function = str_function
 
     def change_debug(self, bool_debug):
@@ -188,3 +192,69 @@ class Log:
             None
         """
         self.append("FINISH")
+
+    def append_new_line(self, str_log_line):
+        """Append log line to log file on a new line
+
+        UNIT TESTED
+
+        Creates the folders along the path and the log file if it doesn't exist and adds the
+        log line as the last line of the file on a new line
+
+        Args:
+            str_log_line: A string that you wish to send to add to the log file
+
+        Returns:
+            None
+
+        Raises:
+            Assertion if you send a non-String as an argument
+        """
+        assert isinstance(str_log_line, str), "PYMADEEASY LOG FAIL! You sent a non-String to append_new_line()"
+
+        os.create_folders_along_path(self.location)
+        if self.debug:
+            p.print_str(str_log_line)
+        with open(self.location, "a") as f:
+            f.write(str_log_line)
+            f.write("\n")
+
+    def append_object_to_string(self, object_unknown_type):
+        """Append log line to log file
+
+        UNIT TESTED
+
+        Creates the folders along the path and the log file if it doesn't exist and adds the
+        object as a string to the last line of the file
+
+        Args:
+            object_unknown_type: An object or unknown data type that you want to append to the Log file as a string
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        if self.debug:
+            self.append(str(object_unknown_type))
+
+    def append_object_to_string_on_new_line(self, object_unknown_type):
+        """Append log line to log file on a new line
+
+        UNIT TESTED
+
+        Creates the folders along the path and the log file if it doesn't exist and adds the
+        object as a string to the last line of the file on a new line
+
+        Args:
+            object_unknown_type: An object or unknown data type that you want to append to the Log file as a string
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        if self.debug:
+            self.append_new_line(str(object_unknown_type))

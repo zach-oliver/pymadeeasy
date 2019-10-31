@@ -31,3 +31,11 @@ def print_variables_highlighted(dict_variables):
 
 def print_str(str_print):
     print(str_print)
+
+
+def print_obj(unknown_object):
+    print(unknown_object)
+
+
+def print_obj_to_str(unknown_object):
+    print(str(unknown_object))
