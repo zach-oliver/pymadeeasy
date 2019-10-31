@@ -20,6 +20,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
     - added _append_object_as_string_ and _append_object_as_string_new_line_ for unknown object handling
 - _print_functions_ changes:
     - added _print_obj_ and _print_obj_to_str_ to be more explicit with variable types
+- _operating_system_functions_ removed reference to related pymadeeasy libraries to avoid race conditions
 
 ### 1.1.2
 - Adjusted _current_date_time_ formatting and its use on _Log_
