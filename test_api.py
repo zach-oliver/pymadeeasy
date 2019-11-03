@@ -2,7 +2,6 @@
 Created on 04/29/19
 @author: zach-oliver
 """
-
 import api
 import print_functions as p
 import Log
@@ -74,7 +73,7 @@ def test_get_api(str_uri = 'https://httpbin.org/get'):
 
 # https://www.howtogeek.com/269509/how-to-run-two-or-more-terminal-commands-at-once-in-linux/
 def test_create_lambda_with_api_trigger():
-    output_str = os.run_command('cd lambda_with_api_trigger; rm -rf vendor/pymadeeasy; git clone https://github.com/zach-oliver/pymadeeasy.git vendor/pymadeeasy/; chalice deploy', bool_output=True)
+    output_str = os.run_command('cd lambda_with_api_trigger; rm -rf vendor/; git clone https://github.com/zach-oliver/pymadeeasy.git vendor/; chalice deploy', bool_output=True)
     output_str = 'lambda_with_api_trigger/' + output_str
     output_str = os.read_file(output_str, bool_no_lines=True)
     output_str = os.find_url_in_string(output_str)
@@ -86,7 +85,7 @@ def test_delete_lambda_with_api_trigger():
 
 
 def test_create_lambda_with_timer_trigger():
-    output_str = os.run_command('cd lambda_with_timer_trigger; rm -rf vendor/pymadeeasy; git clone https://github.com/zach-oliver/pymadeeasy.git vendor/pymadeeasy/; chalice deploy', bool_output=True)
+    output_str = os.run_command('cd lambda_with_timer_trigger; rm -rf vendor/; git clone https://github.com/zach-oliver/pymadeeasy.git vendor/; chalice deploy', bool_output=True)
     output_str = 'lambda_with_timer_trigger/' + output_str
     output_str = os.read_file(output_str, bool_no_lines=True)
     output_str = os.find_url_in_string(output_str)
@@ -98,18 +97,21 @@ def test_delete_lambda_with_timer_trigger():
 
 
 def test_api():
-    test_get_api()
-    test_get_api(str_uri='https://httpbin.org/status/404')
+    #test_get_api()
+    #test_get_api(str_uri='https://httpbin.org/status/404')
 
 
-    test_api_str = test_create_lambda_with_api_trigger()
-    os.wait(10)
+    #test_api_str = test_create_lambda_with_api_trigger()
+    #os.wait(10)
     # Optional test at root
     # test_get_api(str_uri=test_api_str)
-    test_api_str2 = test_api_str + 'hello/alana'
-    test_get_api(str_uri=test_api_str2)
+    #test_api_str2 = test_api_str + 'hello/alana'
+    #test_get_api(str_uri=test_api_str2)
     test_delete_lambda_with_api_trigger()
 
-    test_create_lambda_with_timer_trigger()
-    os.wait(10)
-    test_delete_lambda_with_timer_trigger()
+    #test_create_lambda_with_timer_trigger()
+    #os.wait(10)
+    #test_delete_lambda_with_timer_trigger()
+
+
+test_api()
