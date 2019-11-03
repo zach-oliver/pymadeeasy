@@ -4,3 +4,4 @@
 
 *.out
 pymadeeasy*
+/vendor/
