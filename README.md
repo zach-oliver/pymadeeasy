@@ -5,7 +5,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ***Constructive*** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-1.1.3 _Log_ and _print_functions_ handling for strings and objects
+1.1.4 _data_frame_functions_ created in beta
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
@@ -14,6 +14,10 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 - [Chalice](https://github.com/aws/chalice) is a Python Serverless Microframework using AWS. It allows you to create Lambda-based cloud functions and invoke them via API.
 
 ## Versions
+### 1.1.4
+- _data_frame_functions_ created:
+    - _data_frame_fill_blanks_ will fill all null values in a column with 0
+
 ### 1.1.3
 - _Log_ changes:
     - added assertions in _append_ and _append_new_line_ to make sure string was passed
