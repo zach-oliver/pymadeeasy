@@ -12,7 +12,7 @@ A DataFrame is a common 2-dimensional data structure that is helpful in gatherin
 |  key_0 | elk        | dog        |
 |  key_1 | pig        | quetzal    |
 
-When combining multiple Series into a DataFrame, they will often times place common keys across Series on the same row _(see key_0, key_1 above)_ but each value will be where the key is the index of the DataFrame and the value is placed where the index and column name match.
+When combining multiple Series into a DataFrame, they will often times place common keys across Series on the same row _(see `key_0`, `key_1` above)_ but each value will be where the key is the index of the DataFrame and the value is placed where the index and column name match.
 
 [data_frame_functions.py](https://github.com/zach-oliver/pymadeeasy/blob/master/data_frame_functions.py) provides descriptive alternatives to streamline the use of DataFrames within your code.
 
