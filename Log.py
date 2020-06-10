@@ -8,8 +8,7 @@ import print_functions as p
 
 
 class Log:
-
-    def __init__(self, str_filename='', bool_debug=False, str_log_directory='log/',
+    def __init__(self, str_filename='', bool_debug=False, bool_off=False, str_log_directory='log/',
                  str_function='', str_separator='|'):
         """Initialize the log file and class object
 
@@ -21,6 +20,7 @@ class Log:
         Args:
             str_filename: A string used to set filename attribute
             bool_debug: A boolean used to set debug attribute
+            bool_off: A boolean used to turn off all write operations for this Log object
             str_log_directory: A string used to designate where the log files written by this
                 class should go
             str_function: A string used to set function attribute
@@ -40,6 +40,7 @@ class Log:
                 class creates
             self.location: A string used as the location where the log file should be written
             self.debug: A boolean used to print log statements out to the console
+            self.logging: A boolean, if True will write to file. If False, all write to file operations will be stopped
             self.function: A string used as the name of the function you are logging with this
                 class and is used for logging statements written to the log file this
                 class creates
@@ -52,15 +53,10 @@ class Log:
         self.debug = bool_debug
         self.function = str_function
         self.separator = str_separator
-
-        if self.debug:
-            p.print_str('log.py' + self.separator + 'self.location (file name)' + self.separator + self.location)
-
+        self.logging = not bool_off
         self.location = "%s%s" % (str_log_directory, self.location)
-
         if self.debug:
             p.print_str('log.py' + self.separator + 'self.location (full name)' + self.separator + self.location)
-
         self.append('LOG CREATED')
 
     # UNIT TESTED
@@ -81,10 +77,8 @@ class Log:
         Raises:
             Assertion if you send a non-String as an argument
         """
-        os.create_folders_along_path(self.location)
 
         assert isinstance(str_log_line, str), "PYMADEEASY LOG FAIL! You sent a non-string to append()"
-
         log_line = os.get_current_date_time(as_string=True, now_format='log') + self.separator
         # https://stackoverflow.com/questions/1557571/how-do-i-get-time-of-a-python-programs-execution
         log_line = log_line + str(round(os.get_current_time() - self.start_time, 2)) + ' sec'
@@ -94,9 +88,13 @@ class Log:
 
         if self.debug:
             p.print_str(log_line)
-        with open(self.location, "a") as f:
-            f.write(log_line)
-            f.write("\n")
+
+        if self.logging:
+            os.create_folders_along_path(self.location)
+
+            with open(self.location, "a") as f:
+                f.write(log_line)
+                f.write("\n")
 
     def change_filename(self, str_filename):
         """Change the log object filename string attribute
@@ -211,13 +209,13 @@ class Log:
             Assertion if you send a non-String as an argument
         """
         assert isinstance(str_log_line, str), "PYMADEEASY LOG FAIL! You sent a non-String to append_new_line()"
-
-        os.create_folders_along_path(self.location)
         if self.debug:
             p.print_str(str_log_line)
-        with open(self.location, "a") as f:
-            f.write(str_log_line)
-            f.write("\n")
+        if self.logging:
+            os.create_folders_along_path(self.location)
+            with open(self.location, "a") as f:
+                f.write(str_log_line)
+                f.write("\n")
 
     def append_object_to_string(self, object_unknown_type):
         """Append log line to log file
@@ -236,8 +234,7 @@ class Log:
         Raises:
             None
         """
-        if self.debug:
-            self.append(str(object_unknown_type))
+        self.append(str(object_unknown_type))
 
     def append_object_to_string_on_new_line(self, object_unknown_type):
         """Append log line to log file on a new line
@@ -256,5 +253,22 @@ class Log:
         Raises:
             None
         """
-        if self.debug:
-            self.append_new_line(str(object_unknown_type))
+        self.append_new_line(str(object_unknown_type))
+
+    def turn_off(self):
+        """Turn off outputting logging to file
+
+        NOT UNIT TESTED
+
+        Changes the logging boolean. Used by append
+
+        Args:
+            None
+
+        Returns:
+            None
+
+        Raises:
+            None
+        """
+        self.logging = False

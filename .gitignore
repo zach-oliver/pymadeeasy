@@ -106,6 +106,9 @@ venv.bak/
 # IDE
 .idea/*
 
+# OS
+.DS_Store
+
 # pymadeeasy
 log/*
 pymadeeasy*
