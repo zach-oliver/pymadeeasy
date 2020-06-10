@@ -8,7 +8,7 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 **Constructive** feedback is welcome at any time to help me along my Python journey.
 
 ## Current Version
-1.1.4 _data_frame_functions_ created in beta
+2.0.0 [__**DataFrame functions**__][df] launched
 
 ## References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
