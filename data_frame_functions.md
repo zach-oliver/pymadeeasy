@@ -21,10 +21,10 @@ When combining multiple Series into a DataFrame, they will often times place com
 ## Last Updated Version
 2.0.0 **data_frame_functions** launched
 
-## Previous Updated Version
+### Previous Updated Version
 1.1.4 **data_frame_functions** created in beta
 
-## References
+### References
 - [Pandas][pandas] a commonly used Python library making data processing easy.
 
 ## Versions

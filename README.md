@@ -10,11 +10,12 @@ Everyone has their own journey when learning a new language. pymadeeasy is inten
 ## Current Version
 2.0.0 [__**DataFrame functions**__][df] launched
 
-## References
+### References
 - [ref](https://github.com/zach-oliver/ref) is my first pass at this project starting with Python 2.x. At some point I needed to move on to 3.x so that journey starts now.
 - [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html) is a Python style guide from Google that points to a few common tools as well as formatting standards. As I learn more about these, I will strive to adhere to these so others can better understand my code.
 - [Semantic Versioning](https://semver.org/) is a commonly known versioning scheme that I will do my best to adhere to over the course of this project.
 - [Chalice](https://github.com/aws/chalice) is a Python Serverless Microframework using AWS. It allows you to create Lambda-based cloud functions and invoke them via API.
+- [Pandas][pandas] a commonly used Python library making data processing easy.
 
 ## Versions
 ### 2.0.0
