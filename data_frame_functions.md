@@ -12,11 +12,15 @@ A DataFrame is a common 2-dimensional data structure that is helpful in gatherin
 |  key_0 | elk        | dog        |
 |  key_1 | pig        | quetzal    |
 
+
 When combining multiple Series into a DataFrame, they will often times place common keys across Series on the same row _(see `key_0`, `key_1` above)_ but each value will be where the key is the index of the DataFrame and the value is placed where the index and column name match.
 
 [data_frame_functions.py](https://github.com/zach-oliver/pymadeeasy/blob/master/data_frame_functions.py) provides descriptive alternatives to streamline the use of DataFrames within your code.
 
 **Note**: When using the phrase _"passed"_ in descriptions below, the object being "passed" is in the form of an argument to a [Python function](https://www.w3schools.com/python/python_functions.asp).
+
+## Last Updated Version
+2.1.0 **data_frame_functions** updated
 
 ## Last Updated Version
 2.0.0 **data_frame_functions** launched
@@ -28,6 +32,17 @@ When combining multiple Series into a DataFrame, they will often times place com
 - [Pandas][pandas] a commonly used Python library making data processing easy.
 
 ## Versions
+### 2.1.0
+- **data_frame_functions** added:
+    - **add_new_column_to_data_frame_from_existing** will add a new column as a copy of an existing column to the Dataframe
+    - **value_is_a_data_frame_column_name** will return True if the value passed is a column name in the DataFrame
+- **data_frame_functions** adjusted:
+    - **add_new_column_to_data_frame_from_series** implementation to latest [Pandas][pandas] recommendations
+    - **get_data_frame_cell** updated to use internal function
+    - **get_data_frame_column_from_string_as_series** naming now replaces **get_data_frame_column_with_index**
+    - **get_data_frame_row_from_index_as_series** naming now replaces **get_data_frame_row_as_series_from_index**
+    - **value_is_in_data_frame_index** naming now replaces **is_value_in_data_frame_index**
+
 ### 2.0.0
 - **data_frame_functions** added:
     - **add_new_column_to_data_frame_from_series** will add a new column to the DataFrame 
@@ -37,13 +52,13 @@ When combining multiple Series into a DataFrame, they will often times place com
     - **create_blank_data_frame** will return a blank DataFrame
     - **create_data_frame** will return a DataFrame with passed data
     - **get_data_frame_cell** will return a specific cell value within the passed DataFrame
-    - **get_data_frame_column_with_index** will return a column of the DataFrame and its indexes if found
-    - **get_data_frame_row_as_series_from_index** will return a Series representing the row of a DataFrame if found
+    - **get_data_frame_column_from_string_as_series** will return a column of the DataFrame and its indexes if found
+    - **get_data_frame_row_from_index_as_series** will return a Series representing the row of a DataFrame if found
     - **get_data_frame_rows_where_column_equals_value** will return all rows within the passed DataFrame where a column matches a value 
     - **get_data_frame_rows_where_column_equals_values** will return all rows within the passed DataFrame where a column matches a set of values 
     - **is_data_frame** will return True if passed object is DataFrame
     - **is_empty_data_frame** will return True is passed DataFrame is empty
-    - **is_value_in_data_frame_index** will return True if passed value is found in DataFrame index
+    - **value_is_in_data_frame_index** will return True if passed value is found in DataFrame index
     - **output_data_frame_as_string** will return the passed DataFrame as a string
     - **set_data_frame_index** will change the index of the DataFrame to the column passed
     - **set_data_frame_value** will set the value at the passed index and column of the DataFrame
@@ -58,6 +73,8 @@ When combining multiple Series into a DataFrame, they will often times place com
 ### add_new_column_to_data_frame_from_series
 - will add a new column to the DataFrame when passed a Series
 - will name the new column in the DataFrame the passed string
+### add_new_column_to_data_frame_from_existing
+- will add a new column to the DataFrame when 
 ### assert_is_data_frame
 - will stop the script and throw an error to the console if the function argument is not a [Pandas][pandas] DataFrame
 - **called_by** argument allows you to add a description (as a string) of the function which invoked this function for improved error communication
@@ -72,9 +89,9 @@ When combining multiple Series into a DataFrame, they will often times place com
 ### get_data_frame_cell
 - returns a value from the cell within the passed DataFrame if it exists
 - will return the value from the passed index and column or a blank string
-### get_data_frame_column_with_index
+### get_data_frame_column_from_string_as_series
 - returns an entire column of the DataFrame passed with indexes included if the column name is found
-### get_data_frame_row_as_series_from_index
+### get_data_frame_row_from_index_as_series
 - returns a Series representing the entire row of a DataFrame if found
 ### get_data_frame_rows_where_column_equals_value
 - returns all rows within the passed DataFrame where a column matches a value
@@ -84,8 +101,6 @@ When combining multiple Series into a DataFrame, they will often times place com
 - returns True if the function argument passed is a [Pandas][pandas] DataFrame else False
 ### is_empty_data_frame
 - returns True if function argument passed DataFrame is empty else False
-### is_value_in_data_frame_index
-- returns True if function argument passed variable is within the DataFrame index else False
 ### output_data_frame_as_string
 - returns the passed DataFrame as a string for easier output to console or file
 ### set_data_frame_index
@@ -96,5 +111,9 @@ When combining multiple Series into a DataFrame, they will often times place com
 - changes the index order of the passed DataFrame in ascending order by default
 ### sort_data_frame_by_values_in_column
 - changes the index order of the passed DataFrame by the values within one of its columns in ascending order by default
+### value_is_a_data_frame_column_name
+- returns True if passed variable is one of the column names within the DataFrame
+### value_is_in_data_frame_index
+- returns True if passed variable is within the DataFrame index
 
 [pandas]: https://pandas.pydata.org/pandas-docs/stable/getting_started/overview.html

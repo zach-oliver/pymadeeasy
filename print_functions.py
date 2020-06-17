@@ -63,6 +63,3 @@ def print_variable_standard(variable, str_variable_name):
     print_standard_line()
     print(str_variable_name + ' ' + str(type(variable)) + ' : ' + str(variable))
     print_standard_line()
-
-
-

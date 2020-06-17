@@ -8,16 +8,26 @@ import print_functions as p
 
 
 # UNIT TESTED
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.insert.html
 def add_new_column_to_data_frame_from_series(data_frame, str_new_column, new_series):
     assert_is_data_frame(data_frame, called_by='add_new_column_to_data_frame_from_series')
     assert_is_series(new_series, called_by='add_new_column_to_data_frame_from_series')
-    data_frame[str_new_column] = new_series
+    data_frame.insert(len(data_frame.columns), str_new_column, new_series)
+
+
+# NOT UNIT TESTED
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.insert.html
+def add_new_column_to_data_frame_from_existing(data_frame, str_new_column, str_existing_column):
+    assert_is_data_frame(data_frame, called_by='add_new_column_to_data_frame_from_existing')
+    data_frame.insert(len(data_frame.columns), str_new_column,
+                      get_data_frame_column_from_string_as_series(data_frame, str_existing_column))
 
 
 # UNIT TESTED
 def assert_is_data_frame(data_frame, called_by=''):
     assert isinstance(data_frame,
                       pandas.DataFrame), "Variable type FAIL! You sent a non-DataFrame to a DataFrame function(%s)" % called_by
+
 
 # UNIT TESTED
 def assert_is_series(series, called_by=''):
@@ -50,20 +60,23 @@ def fill_data_frame_blanks(data_frame, str_column, fill_value=0, bool_in_place=T
 # https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
 def get_data_frame_cell(data_frame, str_index, str_column):
     assert_is_data_frame(data_frame, called_by='get_data_frame_cell')
-    if str_index in data_frame.index:
+    if is_value_in_data_frame_index(data_frame, str_index):
         return data_frame.loc[str_index, str_column]
     else:
         return ''
 
 
 # https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
-def get_data_frame_column_with_index(data_frame, str_column):
-    assert_is_data_frame(data_frame, called_by='get_data_frame_column_with_index')
-    return data_frame[str_column]
+def get_data_frame_column_from_string_as_series(data_frame, str_column):
+    assert_is_data_frame(data_frame, called_by='get_data_frame_column_from_string_as_series')
+    if is_value_a_data_frame_column_name(data_frame, str_column):
+        return data_frame[str_column]
+    else:
+        return ''
 
 
 # https://pandas.pydata.org/pandas-docs/stable/getting_started/10min.html
-def get_data_frame_row_as_series_from_index(data_frame, str_index):
+def get_data_frame_row_from_index_as_series(data_frame, str_index):
     assert_is_data_frame(data_frame, called_by='get_data_frame_row_from_index')
     if is_value_in_data_frame_index(data_frame, str_index):
         return data_frame.loc[str_index]
@@ -92,14 +105,8 @@ def is_data_frame(data_frame):
 
 # UNIT TESTED
 def is_empty_data_frame(data_frame):
-    assert_is_data_frame(data_frame, called_by='is_data_frame_empty')
+    assert_is_data_frame(data_frame, called_by='is_empty_data_frame')
     return data_frame.empty
-
-
-# UNIT TESTED
-def is_value_in_data_frame_index(data_frame, value):
-    assert_is_data_frame(data_frame, called_by='is_value_in_data_frame_index')
-    return value in data_frame.index
 
 
 # UNIT TESTED
@@ -130,6 +137,18 @@ def sort_data_frame_index(data_frame, axis=1, ascending=False, inplace=True):
 def sort_data_frame_by_values_in_column(data_frame, str_column, axis=0, ascending=True, inplace=True):
     assert_is_data_frame(data_frame, called_by='get_data_frame_row_from_index')
     data_frame.sort_values(by=str_column, axis=axis, ascending=ascending, inplace=inplace)
+
+
+# UNIT TESTED
+def value_is_in_data_frame_index(data_frame, value):
+    assert_is_data_frame(data_frame, called_by='value_is_in_data_frame_index')
+    return value in data_frame.index
+
+
+# NOT UNIT TESTED
+def value_is_a_data_frame_column_name(data_frame, value):
+    assert_is_data_frame(data_frame, called_by='value_is_a_data_frame_column_name')
+    return value in data_frame.columns
 
 
 if __name__ == '__main__':
@@ -187,8 +206,8 @@ if __name__ == '__main__':
     p.print_str("Once imported with column names, here's the resulting DataFrame")
     p.print_standard_line()
     p.print_str(output_data_frame_as_string(temp_df))
-    assert is_value_in_data_frame_index(temp_df, temp_list_key[
-        1]), "is_value_in_data_frame_index() FAIL! Original dictionary key did not persist to DataFrame index!"
+    assert value_is_in_data_frame_index(temp_df, temp_list_key[
+        1]), "value_is_in_data_frame_index() FAIL! Original dictionary key did not persist to DataFrame index!"
     p.print_standard_line()
     p.print_str("Each column has the following DataFrame data type")
     p.print_obj_to_str(temp_df.dtypes)
@@ -205,4 +224,3 @@ if __name__ == '__main__':
     p.print_standard_line()
     p.print_str("G column added correctly! All tests have passed!")
     p.print_message_standard('FINISH data_frame_functions.py')
-
